@@ -9,7 +9,10 @@ build_task:
   cargo_cache:
     folder: $CARGO_HOME
   install_rust_script: curl https://sh.rustup.rs -sSf | sh -s -- -y
-  doctor_script: brew doctor
+  doctor_script:
+    - cat /Users/anka/.profile
+    - cat /Users/anka/.bash_profile
+    - brew doctor
   install_cmake_script: brew install cmake
   clone_xi_editor_script: git clone https://github.com/google/xi-editor
   build_script: xcodebuild
