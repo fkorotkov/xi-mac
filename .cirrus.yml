@@ -1,0 +1,14 @@
+osx_instance:
+  image: high-sierra-xcode-9.4.1
+
+env:
+  CARGO_HOME: /tmp/cargo
+  PATH: $PATH:$CARGO_HOME/bin
+
+build_task:
+  cargo_cache:
+    folder: $CARGO_HOME
+  install_rust_script: curl https://sh.rustup.rs -sSf | sh -s -- -y
+  install_cmake_script: brew install cmake
+  clone_xi_editor_script: git clone https://github.com/google/xi-editor
+  build_script: xcodebuild
